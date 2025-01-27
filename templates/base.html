@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>File Sharing Website</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Upload</a>
+            <a href="{{ url_for('download') }}">Download</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 File Sharing Website. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/_prajwal__2004" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/prajwal032004" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="footer-credit">
+            <p>Designed & Developed with ❤️ by Prajwal A. Bhandagi</p>
+        </div>
+    </footer>
+    
+    <!-- Include Font Awesome for the social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+</body>
+</html>

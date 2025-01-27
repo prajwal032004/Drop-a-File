@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="upload">
+    <h2>Upload a File</h2>
+    <p>Only one file at a time, please! Choose a single file to upload.</p>
+    <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file-input" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    <div id="file-preview" style="margin-top: 20px;"></div>
+
+</section>
+
+<script>
+    // Function to display file preview
+    document.getElementById('file-input').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        const previewContainer = document.getElementById('file-preview');
+        previewContainer.innerHTML = ''; // Clear any previous preview
+
+        if (file) {
+            const fileType = file.type.split('/')[0]; // Get the type (image, video, etc.)
+
+            if (fileType === 'image') {
+                // Image preview
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '400px';
+                previewContainer.appendChild(img);
+            } else if (fileType === 'video') {
+                // Video preview
+                const video = document.createElement('video');
+                video.src = URL.createObjectURL(file);
+                video.controls = true;
+                video.style.maxWidth = '100%';
+                previewContainer.appendChild(video);
+            } else if (file.type === 'application/pdf') {
+                // PDF preview (using an embedded object tag)
+                const pdf = document.createElement('object');
+                pdf.data = URL.createObjectURL(file);
+                pdf.type = 'application/pdf';
+                pdf.style.width = '100%';
+                pdf.style.height = '400px';
+                previewContainer.appendChild(pdf);
+            } else {
+                // For any other file types, just display the file name without preview
+                filePreview.innerHTML = `<p>${file.name} - File type not previewable</p>`;
+            }
+
+            previewContainer.appendChild(filePreview);
+        }
+    });
+</script>
+{% endblock %}

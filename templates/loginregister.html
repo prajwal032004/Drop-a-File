@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="POST" action="/register">
+                <h1 class="follow-me">Follow Me:</h1>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_prajwal__2004/" class="icon" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prajwal-a-b-4b3002252/" class="icon" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/prajwal032004" class="icon" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <h2>CREATE ACCOUNT</h2>
+                <span>registration</span>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form method="POST" action="/login">
+                <h1 class="follow-me">Follow Me:</h1>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_prajwal__2004/" class="icon" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prajwal-a-b-4b3002252/" class="icon" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/prajwal032004" class="icon" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <h2>SIGN IN</h2>
+                <form action="/login" method="POST">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign in</button>
+                </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use drop me file</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, User!</h1>
+                    <p>Register with your personal details</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #c9d6ff;
+            background: linear-gradient(90deg, #ebbefe, #bce2fb, #b8eece);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #f0f8ff;
+            border-radius: 30px;
+            box-shadow: 4px 7px 0px 0px rgb(0, 0, 0);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+
+        .container p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+        }
+
+        .container span {
+            font-size: 12px;
+        }
+
+        .container a {
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }
+
+        .fa-brands,
+        .fab {
+            font-family: "Font Awesome 6 Brands";
+            font-weight: 400;
+            font-size: large;
+        }
+
+        .container button {
+            background-color: #2b2b2b;
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .container button:hover {
+    background-color: #494949; /* Slightly darker blue on hover */
+    transform: scale(1.05);    /* Slight zoom effect */
+}
+
+        /* Hidden class with no styles inherited */
+        .container button.hidden {
+            background-color: transparent;
+            /* Resets the background */
+            border-color: white;
+            /* Resets border */
+            color: white;
+            /* Resets text color */
+            font-size: 12px;
+            /* Resets font size */
+            padding: 10px 45px;
+            /* Resets padding */
+            border-radius: 8px;
+            /* Resets border radius */
+            font-weight: 600;
+            /* Resets font weight */
+            letter-spacing: 0.5px;
+            /* Resets letter spacing */
+            text-transform: uppercase;
+            /* Resets text transform */
+            margin-top: initial;
+            /* Resets margin */
+            cursor: pointer;
+            /* Resets cursor */
+        }
+
+        .container form {
+    background-color: #f0f8ff; /* Replace with any color from the above suggestions */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+
+        .container input {
+            background-color: #e9f0fd;
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 19px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.active .sign-in {
+            transform: translateX(100%);
+        }
+
+        .sign-up {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.active .sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: move 0.6s;
+        }
+
+        @keyframes move {
+
+            0%,
+            49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            border: 2px solid #434443;
+            border-radius: 20%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 3px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .follow-me {
+            text-align: center;
+            margin: 1;
+            /* Removes default margin */
+            font-size: 16px;
+            /* Adjust text size */
+            color: #2d2c2c;
+            /* Optional: Adjust text color */
+        }
+
+        .toggle-container {
+            position: absolute;
+            background-color: #c9d6ff;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.6s ease-in-out;
+            border-radius: 150px 0 0 100px;
+            z-index: 1000;
+        }
+
+        .container.active .toggle-container {
+            transform: translateX(-100%);
+            border-radius: 0 150px 100px 0;
+        }
+
+        /* Gradient Animation for Moving Colors */
+        @keyframes gradient-move {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Updated .toggle Class */
+        .toggle {
+            background: linear-gradient(95deg, #8e44ad, #3498db, #2ecc71, #f1c40f);
+            background-size: 400% 400%;
+            color: #fff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+            animation: gradient-move 20s ease infinite;
+            border-radius: 10px;
+        }
+
+        .container.active .toggle {
+            transform: translateX(50%);
+        }
+
+        .toggle-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 30px;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+            align-items: baseline
+        }
+
+        .toggle-left {
+            transform: translateX(-200%);
+        }
+
+        .container.active .toggle-left {
+            transform: translateX(0);
+        }
+
+        .toggle-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.active .toggle-right {
+            transform: translateX(200%);
+        }
+
+
+        /* ADAPTIVE  for mobile devices */
+
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+            .container {
+                background-color: #f2f8fe;
+                border-radius: 30px;
+                box-shadow: 3px 3px 0px 2px #111114;
+                position: center;
+                overflow: hidden;
+                width: 330px;
+                max-width: 100%;
+                min-height: 500px;
+            }
+
+            .social-icons a {
+                font-size: 10px;
+                border-radius: 30%;
+                margin: 1px 3px 3px;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+            }
+
+            .toggle-container {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                transition: all 0.6s ease-in-out;
+                border-radius: 75px 0 0 50px;
+                z-index: 500;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .span {
+                font-size: 3px;
+            }
+
+            a {
+                font-size: 5px;
+            }
+
+            .container form {
+                font-size: 15px;
+            }
+
+            .container input {
+                border: none;
+                margin: 8px 0;
+                padding: 10px 15px;
+                font-size: 10px;
+                border-radius: 8px;
+                width: 120%;
+                outline: none;
+            }
+
+            .container button {
+                background-color: #0e2d02e6;
+                color: #fff;
+                font-size: 11px;
+                padding: 5px 25px;
+                border: 1px solid transparent;
+                border-radius: 8px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                margin-top: 15px;
+                cursor: pointer;
+            }
+
+            .sign-in {
+                left: 0;
+                width: 50%;
+                z-index: 1;
+            }
+
+            .sign-up {
+                left: 0;
+                width: 50%;
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+    </style>
+
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

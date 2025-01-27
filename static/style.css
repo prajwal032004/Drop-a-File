@@ -1,0 +1,231 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #ebbefe, #bce2fb, #b8eece);
+    background-attachment: fixed;
+    overflow-x: hidden; /* Prevent horizontal scrolling on small devices */
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Navigation */
+nav {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #f4a261;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: #303d4e;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+footer .footer-content p,
+footer .footer-credit p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #aca9a9;
+}
+
+/* Gradient Animations */
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.upload,
+.download,
+.success {
+    background: linear-gradient(95deg, #8e44ad, #3498db, #2ecc71, #f1c40f);
+    background-size: 400% 400%;
+    box-shadow: 11px 20px 20px 13px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: #fbf9f9;
+    animation: gradient-move 20s ease infinite;
+}
+
+.success .code {
+    display: block; /* Makes the element behave like a block */
+    margin: 20px auto; /* Centers the box horizontally */
+    width: fit-content; /* Ensures the box width adjusts to the text */
+    padding: 10px 20px; /* Adds space inside the box */
+    background-color: #cfcfcf; /* Highlight color */
+    color: rgb(0, 0, 0); /* Text color */
+    font-weight: bold; /* Makes the text bold */
+    font-size: 18px; /* Adjusts font size */
+    text-align: center; /* Centers the text inside the box */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 8px 12px 13px 0px rgba(0, 0, 0, 0.1); /* Optional: Shadow for depth */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+input[type="file"]{
+    padding: 1rem 0.6rem;
+    border: 1px;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 1rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f6efefd8;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    background-color: #303d4e;
+    color: #dcdcdc;
+    border: none;
+    padding: 1rem 2rem; /* Increased horizontal padding */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    min-width: 150px; /* Optional: Ensures a minimum horizontal size */
+    text-align: center; /* Centers the text inside the button */
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Error Styles */
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.error-container {
+    background-color: #ffffff;
+    box-shadow: 11px 20px 20px 13px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        margin: 0 0.5rem;
+    }
+
+    footer .footer-links a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .error-container {
+        padding: 1.5rem;
+    }
+
+    input[type="file"], input[type="text"], button {
+        font-size: 0.9rem;
+    }
+}

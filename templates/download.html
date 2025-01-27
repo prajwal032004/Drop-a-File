@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="download">
+    <h2>Download a File</h2>
+    <form action="{{ url_for('download') }}" method="post">
+        <input type="text" name="code" placeholder="Enter file code" required>
+        <button type="submit">Download</button>
+    </form>
+</section>
+{% endblock %}

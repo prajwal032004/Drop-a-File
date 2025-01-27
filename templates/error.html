@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="error">
+    <div class="error-container">
+        <h2>File Not Found</h2>
+        <div class="error-icon">
+            <video autoplay loop muted playsinline style="width: 110px; height: 110px;">
+                <source src="https://cdn-icons-mp4.flaticon.com/512/12753/12753479.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <p>The file code you entered doesn't exist or has expired.</p>
+        <div class="error-actions">
+            <a href="{{ url_for('download') }}" class="button">Try Again</a>
+            <a href="{{ url_for('index') }}" class="button">Upload New File</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

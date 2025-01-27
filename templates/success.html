@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="success">
+    <h2>File Uploaded Successfully</h2>
+    <p>Your file has been uploaded. Here's your unique code:</p>
+    <div class="code">{{ code }}</div>
+    <p>Share this code with others to allow them to download your file.</p>
+</section>
+{% endblock %}
