@@ -102,7 +102,7 @@ secure-file-sharing/
 └── README.md           # Project documentation
 ```
 
-## ⚙️requirements
+## ⚙️ Requirements
 
 ```
 Flask==2.2.3
@@ -124,10 +124,12 @@ This project is licensed under the Self License.
 
 ## 👥 Authors
 
-- Your Name - Initial work - [YourGitHub](https://github.com/prajwal032004)
+-[Prajwal](https://github.com/prajwal032004)
 
 ## 🙏 Acknowledgments
 
 - Flask documentation and community
 - SQLAlchemy documentation
 - Python community
+
+### ✨️Happy Coding
