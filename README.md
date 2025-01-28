@@ -104,18 +104,11 @@ secure-file-sharing/
 
 ## ⚙️ Requirements
 
-```
-Flask==2.2.3
-Flask-SQLAlchemy==2.5.1
-Werkzeug==2.2.3
-```
-
-## ⚙️ Requirements
-
 ```plaintext
 Flask==2.2.3
 Flask-SQLAlchemy==2.5.1
 Werkzeug==2.2.3
+```
 
 ## 🤝 Contributing
 
