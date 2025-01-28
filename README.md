@@ -1,10 +1,12 @@
 # Drop-a-File📥📁📤
 A secure and user-friendly web application built with Flask that enables authenticated users to share files using unique codes. The application features user authentication, secure file uploads, and a code-based file retrieval system.
 
+---
 ## 🔗Link
 
 [live website view ](https://prajwalab.pythonanywhere.com/)
 
+---
 ## 🚀 Features
 
 - **User Authentication**
@@ -96,9 +98,16 @@ secure-file-sharing/
 │   ├── download.html
 │   ├── success.html
 │   └── error.html
-├── static/              # Static files (CSS, JS)
-├── requirements.txt     # Project dependencies
+├── static/              # Static files (CSS, JS)   
 └── README.md           # Project documentation
+```
+
+##requirements
+
+```
+Flask==2.2.3
+Flask-SQLAlchemy==2.5.1
+Werkzeug==2.2.3
 ```
 
 ## 🤝 Contributing
