@@ -102,7 +102,7 @@ secure-file-sharing/
 └── README.md           # Project documentation
 ```
 
-##requirements
+## ⚙️requirements
 
 ```
 Flask==2.2.3
