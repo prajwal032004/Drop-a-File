@@ -2,11 +2,6 @@
 A secure and user-friendly web application built with Flask that enables authenticated users to share files using unique codes. The application features user authentication, secure file uploads, and a code-based file retrieval system.
 
 ---
-## 🔗Link
-
-[live website view ](https://prajwalab.pythonanywhere.com/)
-
----
 ## 🚀 Features
 
 - **User Authentication**
